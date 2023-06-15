@@ -1,88 +1,21 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
+import {useEffect} from 'react';
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-import ButtonCustomTabs from './android/src/components/ButtonCustomTabs';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section(): JSX.Element {
-  return (
-    <View style={styles.sectionContainer}>
-      <ButtonCustomTabs />
-    </View>
-  );
-}
+import MainStack from './navigation/MainStack';
+import {Linking} from 'react-native';
+import InAppBrowser from 'react-native-inappbrowser-reborn';
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+  useEffect(() => {
+    Linking.addEventListener('url', res => {
+      const {url} = res;
+      if (url !== null && url.includes('myapp')) {
+        InAppBrowser.close();
+      }
+    });
+  }, []);
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <ButtonCustomTabs />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
+  return <MainStack />;
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;
