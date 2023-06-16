@@ -7,15 +7,15 @@ const ButtonCustomTabs = () => {
       InAppBrowser.open(url, {
         // iOS Properties
         dismissButtonStyle: 'cancel',
-        preferredBarTintColor: '#453AA4',
+        preferredBarTintColor: '#00b1ea',
         preferredControlTintColor: 'white',
         readerMode: true,
         animated: true,
         modalEnabled: true,
         // Android Properties
         showTitle: true,
-        toolbarColor: '#6200EE',
-        secondaryToolbarColor: 'black',
+        toolbarColor: '#00b1ea',
+        secondaryToolbarColor: 'white',
         enableUrlBarHiding: true,
         enableDefaultShare: true,
         forceCloseOnRedirection: false,

@@ -1,18 +1,13 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
-import ButtonCustomTabs from '../src/components/ButtonCustomTabs';
 
-const Home = () => {
+const Congrats = () => {
   return (
-    // eslint-disable-next-line react-native/no-inline-styles
     <View style={styles.container}>
-      <Text style={styles.title}>React Native CLI</Text>
-      <Text style={styles.subtitle}>POC</Text>
-      <ButtonCustomTabs />
+      <Text style={styles.title}>Congrats ✅</Text>
     </View>
   );
 };
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -41,5 +36,4 @@ const styles = StyleSheet.create({
     color: '#0000FF',
   },
 });
-
-export default Home;
+export default Congrats;
