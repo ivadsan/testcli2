@@ -36,7 +36,7 @@ const ButtonCustomTabs = () => {
       title="Press Me"
       onPress={() =>
         openUrl(
-          'https://beta.mercadopago.com.ar/checkout/v1/beta11/redirect?preference-id=239658604-a222518f-db60-4278-af59-f94ca88c4472&device-override=mobile&deeplink=true',
+          'https://beta.mercadopago.com.ar/checkout/v1/beta11/redirect?preference-id=239658604-a222518f-db60-4278-af59-f94ca88c4472&device-override=mobile',
         )
       }
     />

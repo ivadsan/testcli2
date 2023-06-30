@@ -4,7 +4,8 @@ import React from 'react';
 const Congrats = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Congrats ✅</Text>
+      <Text style={styles.title}>Success ✅</Text>
+      <Text style={styles.subtitle}>Coming back to your app</Text>
     </View>
   );
 };
